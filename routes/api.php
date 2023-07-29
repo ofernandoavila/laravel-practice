@@ -22,6 +22,14 @@ Route::get('/posts', function (){
     ]);
 });
 
+Route::get('/users', function (){
+    return response()->json([
+        'users' => [
+            'name' => 'user_name',
+        ]
+    ]);
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
